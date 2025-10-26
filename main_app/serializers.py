@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Certificate, Course
+from .models import Category, Certificate, Course, PersonalDocument
 
 # _________________________________________________________
 
@@ -24,5 +24,12 @@ class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = '__all__'
-        
+
+# _________________________________________________________
+
+class PersonalDocumentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonalDocument
+        fields = '__all__'
+
 # _________________________________________________________
