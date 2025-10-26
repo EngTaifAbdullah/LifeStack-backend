@@ -20,3 +20,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+# source lifestack-venv/Scripts/activate
+
