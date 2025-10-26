@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,10 +74,16 @@ WSGI_APPLICATION = 'LifeStack.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'LifeStack',  # Name of your PostgreSQL database
+        'USER': 'postgres',
+        'PASSWORD': 'TA123456at',
+        'HOST': 'localhost',  
+        'PORT': '5432',
     }
 }
 
