@@ -1,7 +1,18 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-class Home(APIView):
+# ______________________________________________________________________________________________________________
 
+class Home(APIView):
+    
     def get(self, request):
-        return Response({"message": "Welcome to LifeStack App 🍓🌺"})
+        return Response({"message": "Welcome to LifeStack App 🍓🌺 "})
+
+
+    def post(self, request):
+        data = request.data
+        return Response({
+            "message": "You just posted to LifeStack",
+            "data": data
+        })
+# ______________________________________________________________________________________________________________
