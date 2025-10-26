@@ -24,5 +24,10 @@ if __name__ == '__main__':
 
 
 
-# source lifestack-venv/Scripts/activate
+# source LifeStack-venv/Scripts/activate
 
+# python manage.py migrate
+# python manage.py makemigrations
+# python manage.py createsuperuser
+# python manage.py runserver
+# python manage.py startapp main_app
