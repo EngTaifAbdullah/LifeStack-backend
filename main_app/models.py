@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # ______________________________________________________________________________________________________________
 
-# add catogory like: Task,Cource,Exam
+# Add Category like: Task | Cource | Exam
 
 class Category(models.Model):
     category_type = models.CharField(max_length=100)
@@ -13,7 +13,8 @@ class Category(models.Model):
         return self.category_type
     
 # ______________________________________________________________________________________________________________
-# when you whant to uplode your Certificate this is the must  feild to appliy
+
+# when you want to uplode your Certificate this is the fields you need to fill out.
 
 class Certificate(models.Model):
 
@@ -27,3 +28,15 @@ class Certificate(models.Model):
         return f"{self.title} - {self.organization}"
     
 # ______________________________________________________________________________________________________________
+
+
+class Course(models.Model):
+
+    title = models.CharField(max_length=200)
+    provider = models.CharField(max_length=200)
+    description = models.TextField(blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
+
+    def __str__(self):
+        return self.title
