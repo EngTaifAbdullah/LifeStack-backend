@@ -39,4 +39,21 @@ class Course(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
 
     def __str__(self):
+        return f"{self.title} - {self.provider}"
+    
+
+
+# ______________________________________________________________________________________________________________
+
+# Personal doucument such as: ID | Pasport | Resume
+
+class PersonalDocument(models.Model):
+
+    title = models.CharField(max_length=200)
+    file = models.FileField(upload_to='personal_docs/')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_docs')
+
+    def __str__(self):
         return self.title
+    
+# ______________________________________________________________________________________________________________
