@@ -26,14 +26,17 @@ class Home(APIView):
 
 class CertificatesIndex(APIView):
 
-    def get(self, request):
+    def get(self, request):  # Read All certificates List
+
         queryset = Certificate.objects.all()
         serializer = CertificateSerializer(queryset, many=True)
 
         return Response(serializer.data)
 
 
-    def post(self, request):
+
+    def post(self, request):  # Create new certificate
+
         serializer = CertificateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -55,7 +58,9 @@ class CertificateDetail(APIView):
         return Response(serializer.data)
 
 
-    def put(self, request, cert_id):
+
+    def put(self, request, cert_id):  # Update spesifice certificates
+
         certificate = get_object_or_404(Certificate, id=cert_id)
         serializer = CertificateSerializer(certificate, data=request.data)
         if serializer.is_valid():
@@ -65,7 +70,9 @@ class CertificateDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-    def delete(self, request, cert_id):
+
+    def delete(self, request, cert_id):  # Delete spesifice certificates
+        
         certificate = get_object_or_404(Certificate, id=cert_id)
         certificate.delete()
 
@@ -77,14 +84,17 @@ class CertificateDetail(APIView):
 
 class CoursesIndex(APIView):
 
-    def get(self, request):
+    def get(self, request):  # Read All Courses List
+
         queryset = Course.objects.all()
         serializer = CourseSerializer(queryset, many=True)
 
         return Response(serializer.data)
 
 
-    def post(self, request):
+
+    def post(self, request): # Create new Courses
+
         serializer = CourseSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -102,12 +112,20 @@ class CourseDetail(APIView):
 
         course = get_object_or_404(Course, id=course_id)
         serializer = CourseSerializer(course)
-        
+
         return Response(serializer.data)
 
 
 
+    def put(self, request, course_id):  # Update spesifice course
 
+        course = get_object_or_404(Course, id=course_id)
+        serializer = CourseSerializer(course, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
