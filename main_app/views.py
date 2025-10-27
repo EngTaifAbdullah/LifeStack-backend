@@ -143,7 +143,7 @@ class PersonalDocsIndex(APIView):
         serializer = PersonalDocumentSerializer(queryset, many=True)
         return Response(serializer.data)
     
-    
+
 
     def post(self, request):  # Create new Personal Document
 
@@ -153,13 +153,18 @@ class PersonalDocsIndex(APIView):
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+# ____________________________________
 
+# Personal Document CRUD (( Read ))
 
+class PersonalDocDetail(APIView):
 
+    def get(self, request, doc_id):  # Read spesifice Personal Document
 
-
-
-
+        doc = get_object_or_404(PersonalDocument, id=doc_id)
+        serializer = PersonalDocumentSerializer(doc)
+        return Response(serializer.data)
 
 
 
