@@ -13,12 +13,12 @@ class Home(APIView):
         return Response({"message": "Welcome to LifeStack App 🍓🌺 "})
 
 
-    def post(self, request):
-        data = request.data
-        return Response({
-            "message": "You just posted to LifeStack",
-            "data": data
-        })
+    # def post(self, request):
+    #     data = request.data
+    #     return Response({
+    #         "message": "You just posted to LifeStack",
+    #         "data": data
+    #     })
 # __________________________________________________________________________________________________________________________
 
 
