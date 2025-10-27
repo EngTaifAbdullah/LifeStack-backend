@@ -5,7 +5,7 @@ from rest_framework import status
 from .models import Certificate, Course
 from .serializers import CertificateSerializer, CourseSerializer
 
-# ______________________________________________________________________________________________________________
+# __________________________________________________________________________________________________________________________
 
 class Home(APIView):
     
@@ -19,7 +19,7 @@ class Home(APIView):
             "message": "You just posted to LifeStack",
             "data": data
         })
-# ______________________________________________________________________________________________________________
+# __________________________________________________________________________________________________________________________
 
 
 # Certificates CRUD (( Read | Create ))
@@ -78,7 +78,7 @@ class CertificateDetail(APIView):
 
         return Response({"message": f"Certificate {cert_id} deleted Successfully"}, status=status.HTTP_204_NO_CONTENT)
 
-# ______________________________________________________________________________________________________________
+# __________________________________________________________________________________________________________________________
 
 # Courses CRUD (( Read | Create ))
 
@@ -127,10 +127,28 @@ class CourseDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+ 
+
+    def delete(self, request, course_id):  # Delete spesifice course
+
+        course = get_object_or_404(Course, id=course_id)
+        course.delete()
+
+        return Response({"message": f"Course {course_id} deleted"}, status=status.HTTP_204_NO_CONTENT)
+
+# __________________________________________________________________________________________________________________________
 
 
 
 
 
-    
-# ______________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+# __________________________________________________________________________________________________________________________
