@@ -156,7 +156,7 @@ class PersonalDocsIndex(APIView):
     
 # ____________________________________
 
-# Personal Document CRUD (( Read ))
+# Personal Document CRUD (( Read | Update ))
 
 class PersonalDocDetail(APIView):
 
@@ -168,6 +168,16 @@ class PersonalDocDetail(APIView):
 
 
 
+    def put(self, request, doc_id):  # Update spesifice Personal Document
 
+        doc = get_object_or_404(PersonalDocument, id=doc_id)
+        serializer = PersonalDocumentSerializer(doc, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+    
 
 # __________________________________________________________________________________________________________________________
