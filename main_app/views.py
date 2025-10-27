@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework import status
-from .models import Certificate
-from .serializers import CertificateSerializer
+from .models import Certificate, Course
+from .serializers import CertificateSerializer, CourseSerializer
 
 # ______________________________________________________________________________________________________________
 
@@ -72,6 +72,15 @@ class CertificateDetail(APIView):
 
 # ______________________________________________________________________________________________________________
 
+# Courses CRUD (( Read ))
+
+class CoursesIndex(APIView):
+
+    def get(self, request):
+        queryset = Course.objects.all()
+        serializer = CourseSerializer(queryset, many=True)
+
+        return Response(serializer.data)
 
 
 
