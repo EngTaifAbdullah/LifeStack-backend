@@ -30,7 +30,6 @@ class CertificatesIndex(APIView):
 
         queryset = Certificate.objects.all()
         serializer = CertificateSerializer(queryset, many=True)
-
         return Response(serializer.data)
 
 
@@ -54,7 +53,6 @@ class CertificateDetail(APIView):
 
         certificate = get_object_or_404(Certificate, id=cert_id)
         serializer = CertificateSerializer(certificate)
-
         return Response(serializer.data)
 
 
@@ -88,7 +86,6 @@ class CoursesIndex(APIView):
 
         queryset = Course.objects.all()
         serializer = CourseSerializer(queryset, many=True)
-
         return Response(serializer.data)
 
 
@@ -112,7 +109,6 @@ class CourseDetail(APIView):
 
         course = get_object_or_404(Course, id=course_id)
         serializer = CourseSerializer(course)
-
         return Response(serializer.data)
 
 
@@ -133,8 +129,7 @@ class CourseDetail(APIView):
 
         course = get_object_or_404(Course, id=course_id)
         course.delete()
-
-        return Response({"message": f"Course {course_id} deleted"}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"message": f"Course {course_id} deleted Successfully"}, status=status.HTTP_204_NO_CONTENT)
 
 # __________________________________________________________________________________________________________________________
 
@@ -142,12 +137,23 @@ class CourseDetail(APIView):
 
 class PersonalDocsIndex(APIView):
 
-    def get(self, request):  # Read All Personal Document List
+    def get(self, request):  # Read All Personal Documents List
 
         queryset = PersonalDocument.objects.all()
         serializer = PersonalDocumentSerializer(queryset, many=True)
-
         return Response(serializer.data)
+    
+    
+
+    def post(self, request):  # Create new Personal Document
+
+        serializer = PersonalDocumentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 
