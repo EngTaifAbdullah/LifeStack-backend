@@ -156,7 +156,7 @@ class PersonalDocsIndex(APIView):
     
 # ____________________________________
 
-# Personal Document CRUD (( Read | Update ))
+# Personal Document CRUD (( Read | Update | Delete ))
 
 class PersonalDocDetail(APIView):
 
@@ -174,10 +174,15 @@ class PersonalDocDetail(APIView):
         serializer = PersonalDocumentSerializer(doc, data=request.data)
         if serializer.is_valid():
             serializer.save()
+            
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-    
+    def delete(self, request, doc_id):  # Delete spesifice Personal Document
+
+        doc = get_object_or_404(PersonalDocument, id=doc_id)
+        doc.delete()
+        return Response({"message": f"Document {doc_id} deleted Successfully"}, status=status.HTTP_204_NO_CONTENT)
 
 # __________________________________________________________________________________________________________________________
