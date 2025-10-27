@@ -47,7 +47,8 @@ class CertificatesIndex(APIView):
 
 class CertificateDetail(APIView):
 
-    def get(self, request, cert_id):
+    def get(self, request, cert_id):  # Read spesifice certificates
+
         certificate = get_object_or_404(Certificate, id=cert_id)
         serializer = CertificateSerializer(certificate)
 
@@ -95,7 +96,14 @@ class CoursesIndex(APIView):
 
 # Courses CRUD (( Read | Update | Delete ))
 
+class CourseDetail(APIView):   
 
+    def get(self, request, course_id):  # Read spesifice course
+
+        course = get_object_or_404(Course, id=course_id)
+        serializer = CourseSerializer(course)
+        
+        return Response(serializer.data)
 
 
 
