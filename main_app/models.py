@@ -7,7 +7,14 @@ from django.contrib.auth.models import User
 # Add Category like: Task | Cource | Exam
 
 class Category(models.Model):
-    category_type = models.CharField(max_length=100)
+
+    CATEGORY_CHOICES = [
+        ('TASK', 'Task'),
+        ('COURSE', 'Course'),
+        ('EXAM', 'Exam'),
+    ]
+
+    category_type = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='COURSE')
 
     def __str__(self):
         return self.category_type
