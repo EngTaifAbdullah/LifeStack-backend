@@ -72,7 +72,7 @@ class CertificateDetail(APIView):
 
 # ______________________________________________________________________________________________________________
 
-# Courses CRUD (( Read ))
+# Courses CRUD (( Read | Create ))
 
 class CoursesIndex(APIView):
 
@@ -81,6 +81,23 @@ class CoursesIndex(APIView):
         serializer = CourseSerializer(queryset, many=True)
 
         return Response(serializer.data)
+
+
+    def post(self, request):
+        serializer = CourseSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+# ____________________________________
+
+# Courses CRUD (( Read | Update | Delete ))
+
+
+
+
 
 
 
