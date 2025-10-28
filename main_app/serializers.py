@@ -11,7 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 # _________________________________________________________
 
-class certificateerializer(serializers.ModelSerializer):
+class certificateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Certificate
