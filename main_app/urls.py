@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Home, certificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail
+from .views import Home, CertificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail
 
 # __________________________________________________________________________________________________________________________
 
@@ -9,8 +9,12 @@ urlpatterns = [
     path('', Home.as_view(), name='home'),
 
 
-    path('certificate/', certificateIndex.as_view(), name='cert_index'),
-    path('certificate/<int:cert_id>/', CertificateDetail.as_view(), name='cert_detail'),
+    # path('certificates/', CertificatesIndex.as_view(), name='cert_index'),
+    # path('certificates/<int:cert_id>/', CertificateDetail.as_view(), name='cert_detail'),
+
+    path('certificate/', CertificateIndex.as_view(), name='certificate_index'),
+    path('certificate/<int:cert_id>/', CertificateDetail.as_view(), name='certificate_detail'),
+
 
 
     path('courses/', CoursesIndex.as_view(), name='course_index'),

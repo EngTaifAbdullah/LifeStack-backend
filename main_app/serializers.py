@@ -12,6 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
 # _________________________________________________________
 
 class certificateSerializer(serializers.ModelSerializer):
+    file = serializers.FileField(required=False, allow_null=True)
 
     class Meta:
         model = Certificate

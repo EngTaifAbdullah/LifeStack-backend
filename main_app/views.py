@@ -24,7 +24,7 @@ class Home(APIView):
 
 # certificate CRUD (( Read | Create ))
 
-class certificateIndex(APIView):
+class CertificateIndex(APIView):
 
     def get(self, request):  # Read All certificate List
 

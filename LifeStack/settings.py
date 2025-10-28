@@ -65,6 +65,10 @@ ROOT_URLCONF = 'LifeStack.urls'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+MEDIA_URL = '/AllCertificates/'
+MEDIA_ROOT = BASE_DIR / 'AllCertificates'
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
