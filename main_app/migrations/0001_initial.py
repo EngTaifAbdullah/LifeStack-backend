@@ -28,8 +28,8 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200)),
                 ('organization', models.CharField(max_length=200)),
                 ('date_obtained', models.DateField()),
-                ('file', models.FileField(upload_to='certificates/')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='certificates', to=settings.AUTH_USER_MODEL)),
+                ('file', models.FileField(upload_to='certificate/')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='certificate', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

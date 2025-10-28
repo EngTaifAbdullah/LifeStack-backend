@@ -28,8 +28,8 @@ class Certificate(models.Model):
     title = models.CharField(max_length=200)
     organization = models.CharField(max_length=200)
     date_obtained = models.DateField()
-    file = models.FileField(upload_to='certificates/')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='certificates')
+    file = models.FileField(upload_to='certificate/')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='certificate')
 
     def __str__(self):
         return f"{self.title} - {self.organization}"

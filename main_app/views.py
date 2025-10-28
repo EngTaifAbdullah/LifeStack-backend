@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from .models import Certificate, Course, PersonalDocument
-from .serializers import CertificateSerializer, CourseSerializer, PersonalDocumentSerializer
+from .serializers import certificateerializer, CourseSerializer, PersonalDocumentSerializer
 
 # __________________________________________________________________________________________________________________________
 
@@ -22,21 +22,21 @@ class Home(APIView):
 # __________________________________________________________________________________________________________________________
 
 
-# Certificates CRUD (( Read | Create ))
+# certificate CRUD (( Read | Create ))
 
-class CertificatesIndex(APIView):
+class certificateIndex(APIView):
 
-    def get(self, request):  # Read All certificates List
+    def get(self, request):  # Read All certificate List
 
         queryset = Certificate.objects.all()
-        serializer = CertificateSerializer(queryset, many=True)
+        serializer = certificateerializer(queryset, many=True)
         return Response(serializer.data)
 
 
 
     def post(self, request):  # Create new certificate
 
-        serializer = CertificateSerializer(data=request.data)
+        serializer = certificateerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
 
@@ -45,22 +45,22 @@ class CertificatesIndex(APIView):
     
 # ____________________________________
 
-# Certificates CRUD (( Read | Update | Delete ))
+# certificate CRUD (( Read | Update | Delete ))
 
 class CertificateDetail(APIView):
 
-    def get(self, request, cert_id):  # Read spesifice certificates
+    def get(self, request, cert_id):  # Read spesifice certificate
 
         certificate = get_object_or_404(Certificate, id=cert_id)
-        serializer = CertificateSerializer(certificate)
+        serializer = certificateerializer(certificate)
         return Response(serializer.data)
 
 
 
-    def put(self, request, cert_id):  # Update spesifice certificates
+    def put(self, request, cert_id):  # Update spesifice certificate
 
         certificate = get_object_or_404(Certificate, id=cert_id)
-        serializer = CertificateSerializer(certificate, data=request.data)
+        serializer = certificateerializer(certificate, data=request.data)
         if serializer.is_valid():
             serializer.save()
 
@@ -69,7 +69,7 @@ class CertificateDetail(APIView):
 
 
 
-    def delete(self, request, cert_id):  # Delete spesifice certificates
+    def delete(self, request, cert_id):  # Delete spesifice certificate
         
         certificate = get_object_or_404(Certificate, id=cert_id)
         certificate.delete()
