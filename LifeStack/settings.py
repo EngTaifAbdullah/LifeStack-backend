@@ -65,8 +65,8 @@ ROOT_URLCONF = 'LifeStack.urls'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-MEDIA_URL = '/AllCertificates/'
-MEDIA_ROOT = BASE_DIR / 'AllCertificates'
+MEDIA_URL = '/AllDocuments/'
+MEDIA_ROOT = BASE_DIR / 'AllDocuments'
 
 
 TEMPLATES = [
