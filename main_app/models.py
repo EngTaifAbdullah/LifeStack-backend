@@ -40,7 +40,7 @@ class Certificate(models.Model):
 class Course(models.Model):
 
     title = models.CharField(max_length=200)
-    provider = models.CharField(max_length=200)
+    provider = models.CharField(max_length=200, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
