@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework import status
-from .models import Certificate, Course, PersonalDocument
+from .models import Certificate, Course, PersonalDocument, Category
 from .serializers import certificateSerializer, CourseSerializer, PersonalDocumentSerializer
 
 # __________________________________________________________________________________________________________________________
@@ -186,3 +186,11 @@ class PersonalDocDetail(APIView):
         return Response({"message": f"Document {doc_id} deleted Successfully"}, status=status.HTTP_204_NO_CONTENT)
 
 # __________________________________________________________________________________________________________________________
+
+# To display it as Drop dowen list
+
+class CategoryList(APIView):
+    def get(self, request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
