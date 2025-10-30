@@ -20,14 +20,20 @@ class certificateSerializer(serializers.ModelSerializer):
 
 # _________________________________________________________
 
-class CourseSerializer(serializers.ModelSerializer):
-    category = serializers.StringRelatedField()  
 
+class CourseSerializer(serializers.ModelSerializer):
+    # للقراءة فقط: اسم التصنيف
+    category_name = serializers.CharField(source='category.category_type', read_only=True)
+    # للكتابة: id التصنيف
+    category = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        required=False,
+        allow_null=True
+    )
 
     class Meta:
         model = Course
-        fields = '__all__'
-
+        fields = ['id', 'title', 'provider', 'description', 'user', 'category', 'category_name']
 # _________________________________________________________
 
 class PersonalDocumentSerializer(serializers.ModelSerializer):
