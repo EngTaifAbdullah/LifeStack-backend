@@ -29,8 +29,10 @@ class CourseSerializer(serializers.ModelSerializer):
 # _________________________________________________________
 
 class PersonalDocumentSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = PersonalDocument
         fields = '__all__'
 
 # _________________________________________________________
+
