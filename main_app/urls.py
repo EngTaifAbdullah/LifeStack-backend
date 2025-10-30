@@ -16,7 +16,6 @@ urlpatterns = [
     path('certificate/<int:cert_id>/', CertificateDetail.as_view(), name='certificate_detail'),
 
 
-
     path('courses/', CoursesIndex.as_view(), name='course_index'),
     path('courses/<int:course_id>/', CourseDetail.as_view(), name='course_detail'),
 
@@ -25,6 +24,5 @@ urlpatterns = [
     path('personal/<int:doc_id>/', PersonalDocDetail.as_view(), name='personal_detail'),
 
     path('categories/', CategoryList.as_view(), name='categories'),
-
 
 ]

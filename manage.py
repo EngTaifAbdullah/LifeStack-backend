@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
 
 # source LifeStack-venv/Scripts/activate
+
 # python manage.py migrate
 # python manage.py makemigrations
 # python manage.py createsuperuser
