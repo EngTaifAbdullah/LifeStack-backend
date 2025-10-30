@@ -21,6 +21,8 @@ class certificateSerializer(serializers.ModelSerializer):
 # _________________________________________________________
 
 class CourseSerializer(serializers.ModelSerializer):
+    category = serializers.StringRelatedField()  
+
 
     class Meta:
         model = Course
