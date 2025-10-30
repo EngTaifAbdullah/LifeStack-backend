@@ -9,9 +9,6 @@ urlpatterns = [
     path('', Home.as_view(), name='home'),
 
 
-    # path('certificates/', CertificatesIndex.as_view(), name='cert_index'),
-    # path('certificates/<int:cert_id>/', CertificateDetail.as_view(), name='cert_detail'),
-
     path('certificate/', CertificateIndex.as_view(), name='certificate_index'),
     path('certificate/<int:cert_id>/', CertificateDetail.as_view(), name='certificate_detail'),
 
@@ -22,6 +19,7 @@ urlpatterns = [
 
     path('personal/', PersonalDocsIndex.as_view(), name='personal_index'),
     path('personal/<int:doc_id>/', PersonalDocDetail.as_view(), name='personal_detail'),
+
 
     path('categories/', CategoryList.as_view(), name='categories'),
 

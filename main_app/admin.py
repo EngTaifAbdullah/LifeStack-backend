@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Certificate, Course, PersonalDocument,Category
+from .models import Certificate, Course, PersonalDocument, Category
+
 
 # Register your models here.
 
