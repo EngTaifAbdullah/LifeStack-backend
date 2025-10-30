@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Home, CertificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail
+from .views import Home, CertificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail,CategoryList
 
 # __________________________________________________________________________________________________________________________
 
@@ -23,5 +23,8 @@ urlpatterns = [
 
     path('personal/', PersonalDocsIndex.as_view(), name='personal_index'),
     path('personal/<int:doc_id>/', PersonalDocDetail.as_view(), name='personal_detail'),
+
+    path('categories/', CategoryList.as_view(), name='categories'),
+
 
 ]
