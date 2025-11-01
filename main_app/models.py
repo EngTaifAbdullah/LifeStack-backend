@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
 
     CATEGORY_CHOICES = [
-        
+
         ('Task', 'Task'),
         ('Course', 'Course'),
         ('Exam', 'Exam'),
@@ -31,6 +31,7 @@ class Certificate(models.Model):
     date_obtained = models.DateField()
     file = models.FileField(upload_to='certificate/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='certificate')
+
 
     def __str__(self):
         return f"{self.title} - {self.organization}"
