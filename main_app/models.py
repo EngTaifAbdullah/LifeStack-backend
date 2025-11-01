@@ -63,7 +63,6 @@ class PersonalDocument(models.Model):
     file = models.FileField(upload_to='personal_docs/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_docs')
 
-
     def __str__(self):
         return self.title
     
