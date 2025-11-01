@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Category, Certificate, Course, PersonalDocument
 
-# _________________________________________________________
+# _____________________________________________________________________________________________________
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -9,22 +9,23 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = '__all__'
 
-# _________________________________________________________
+# _____________________________________________________________________________________________________
 
 class certificateSerializer(serializers.ModelSerializer):
+
     file = serializers.FileField(required=False, allow_null=True)
+    user = serializers.PrimaryKeyRelatedField(read_only=True)  # read-only
 
     class Meta:
         model = Certificate
         fields = '__all__'
 
-# _________________________________________________________
+# _____________________________________________________________________________________________________
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    # للقراءة فقط: اسم التصنيف
+
     category_name = serializers.CharField(source='category.category_type', read_only=True)
-    # للكتابة: id التصنيف
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all(),
         required=False,
@@ -34,7 +35,8 @@ class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = ['id', 'title', 'provider', 'description', 'user', 'category', 'category_name']
-# _________________________________________________________
+
+# _____________________________________________________________________________________________________
 
 class PersonalDocumentSerializer(serializers.ModelSerializer):
 
@@ -42,5 +44,5 @@ class PersonalDocumentSerializer(serializers.ModelSerializer):
         model = PersonalDocument
         fields = '__all__'
 
-# _________________________________________________________
+# _____________________________________________________________________________________________________
 

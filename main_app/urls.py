@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import Home, CertificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail,CategoryList
-
-# __________________________________________________________________________________________________________________________
-
+from .views import ( Home, CertificateIndex, CertificateDetail, CoursesIndex, CourseDetail, PersonalDocsIndex, PersonalDocDetail, CategoryList, SignupUserView, LogoutView )
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+# ________________________________________________________________________________________________________________________________________________________________________________________________
 
 urlpatterns = [
 
@@ -23,4 +22,10 @@ urlpatterns = [
 
     path('categories/', CategoryList.as_view(), name='categories'),
 
+
+    path('login/', TokenObtainPairView.as_view(), name='login'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('signup/', SignupUserView.as_view(), name='signup'),
+    path('logout/', LogoutView.as_view(), name='logout')
 ]
+# ________________________________________________________________________________________________________________________________________________________________________________________________

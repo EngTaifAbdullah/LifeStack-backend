@@ -9,9 +9,10 @@ from django.contrib.auth.models import User
 class Category(models.Model):
 
     CATEGORY_CHOICES = [
-        ('TASK', 'Task'),
-        ('COURSE', 'Course'),
-        ('EXAM', 'Exam'),
+        
+        ('Task', 'Task'),
+        ('Course', 'Course'),
+        ('Exam', 'Exam'),
     ]
 
     category_type = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='COURSE')
@@ -63,4 +64,4 @@ class PersonalDocument(models.Model):
     def __str__(self):
         return self.title
     
-# ______________________________________________________________________________________________________________
+# ________________________________________________________________________________________________________________________________________________________________________________________________
