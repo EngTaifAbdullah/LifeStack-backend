@@ -218,3 +218,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ```
+### Admin Panel
+Django’s built-in admin interface allows you to manage all models easily.
+Visit: `http://127.0.0.1:8000/admin/`
+Login using your superuser credentials.
