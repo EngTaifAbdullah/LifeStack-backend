@@ -251,7 +251,18 @@ docker run -p 8000:8000 lifestack-backend
 
 ---
 ### 📁 Communication with Frontend
-Frontend Repository: `https://github.com/EngTaifAbdullah/LifeStack-frontend`
 
+Frontend Repository: `https://github.com/EngTaifAbdullah/LifeStack-frontend`
 Frontend Base URL: `http://localhost:5173`
 API Base URL: `http://localhost:8000/api/`
+
+---
+### 🔮 Future Improvements
+- Add password reset functionality
+
+---
+### 👩‍💻 Developer
+
+#### Taif Abdullah AlAnzi 
+Email: Eng.taifabdullah@gmail.com
+GitHub: @EngTaifAbdullah
