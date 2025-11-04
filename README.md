@@ -222,3 +222,9 @@ CORS_ALLOWED_ORIGINS = [
 Django’s built-in admin interface allows you to manage all models easily.
 Visit: `http://127.0.0.1:8000/admin/`
 Login using your superuser credentials.
+
+
+### 🧪 Testing
+All major endpoints (CRUD + Auth) were tested using `Postman`.
+
+---
