@@ -209,22 +209,45 @@ Users can register, obtain tokens, and authenticate their API requests by includ
 ```bash
 Authorization: Bearer <access_token>
 ```
-
+---
 ### CORS Configuration
 CORS is enabled in settings.py to allow the frontend React app to communicate with the backend:
 ```bash
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
-
 ```
+---
 ### Admin Panel
 Django’s built-in admin interface allows you to manage all models easily.
 Visit: `http://127.0.0.1:8000/admin/`
 Login using your superuser credentials.
 
+---
 
 ### 🧪 Testing
 All major endpoints (CRUD + Auth) were tested using `Postman`.
 
 ---
+### 🐳 Docker Setup
+
+#### 1. Build Docker Image
+```bash
+docker build -t lifestack-backend .
+```
+#### 2. Run the container 
+```bash
+docker run -p 8000:8000 lifestack-backend
+```
+---
+#### 📊 Requirements Checklist
+- ✅ Django REST Framework setup
+- ✅ PostgreSQL database integration
+- ✅ JWT Authentication
+- ✅ CRUD for 3 related models
+- ✅ CORS enabled for React frontend
+- ✅ Dockerized for deployment
+- ✅ Full integration with frontend (React)
+
+---
+### 📁 Communication with Frontend
