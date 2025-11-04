@@ -139,4 +139,18 @@ python manage.py runserver
 ```
 The API will now be available at : `http://127.0.0.1:8000/api/`
 
+---
+---
+### Main Endpoints (API Routes)
 
+| Endpoint                  | Method             | Description                                     |
+| ------------------------- | ------------------ | ----------------------------------------------- |
+| `/api/token/`             | POST               | Obtain JWT Token                                |
+| `/api/token/refresh/`     | POST               | Refresh Access Token                            |
+| `/api/register/`          | POST               | Register a new user                             |
+| `/api/certificates/`      | GET / POST         | List or create certificates                     |
+| `/api/certificates/{id}/` | GET / PUT / DELETE | Retrieve, update, or delete a certificate       |
+| `/api/personal/`          | GET / POST         | List or create personal documents               |
+| `/api/personal/{id}/`     | GET / PUT / DELETE | Retrieve, update, or delete a personal document |
+| `/api/courses/`           | GET / POST         | List or create goals/courses                    |
+| `/api/courses/{id}/`      | GET / PUT / DELETE | Retrieve, update, or delete a course            |
