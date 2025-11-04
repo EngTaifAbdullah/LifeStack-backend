@@ -119,3 +119,24 @@ DB_PASSWORD=*****
 DB_HOST=localhost
 DB_PORT=5432
 ```
+#### 6. Run migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+#### 7. Create superuser
+
+```bash
+python manage.py createsuperuser
+```
+
+#### 8. Run the server
+
+```bash
+python manage.py runserver
+```
+The API will now be available at : `http://127.0.0.1:8000/api/`
+
+
