@@ -29,8 +29,7 @@ Access all their data anytime, anywhere, through a secure and authenticated syst
 - Django CORS Headers
 - SimpleJWT (for authentication)
 - Docker
-- Gunicorn (for production)
-- Pillow (for image/file uploads)
+
 
   ---
 
