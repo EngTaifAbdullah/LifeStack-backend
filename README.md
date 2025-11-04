@@ -82,7 +82,17 @@ LifeStack-backend/
  ---
  
  ### ⚙️ Installation & Setup
+
+#### 1. Clone the repository
+
 ```bash
 git clone https://github.com/EngTaifAbdullah/LifeStack-backend.git
 cd LifeStack-backend
+```
+
+#### 2.Create and activate virtual environment
+
+```bash
+python -m venv venv
+source LifeStack-venv/Scripts/activate   # for Windows
 ```
