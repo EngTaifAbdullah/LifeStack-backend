@@ -90,9 +90,18 @@ git clone https://github.com/EngTaifAbdullah/LifeStack-backend.git
 cd LifeStack-backend
 ```
 
-#### 2.Create and activate virtual environment
+#### 2. Create and activate virtual environment
 
 ```bash
 python -m venv venv
 source LifeStack-venv/Scripts/activate   # for Windows
 ```
+
+#### 3. Install dependencies
+
+```bash
+pip install 
+```
+
+#### 4. Setup the PostgreSQL database
+Create a PostgreSQL database manually, or use .env file as shown below.
