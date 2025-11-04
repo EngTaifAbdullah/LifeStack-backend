@@ -78,4 +78,11 @@ LifeStack-backend/
 │
 └── manage.py
  ```
+
+ ---
  
+ ### ⚙️ Installation & Setup
+```bash
+git clone https://github.com/EngTaifAbdullah/LifeStack-backend.git
+cd LifeStack-backend
+```
