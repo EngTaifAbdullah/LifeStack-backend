@@ -188,3 +188,18 @@ class Course(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
 ```
+
+#### Course Model 
+
+```bash
+class Category(models.Model):
+    CATEGORY_CHOICES = [
+        
+        ('Task', 'Task'),
+        ('Course', 'Course'),
+        ('Exam', 'Exam'),
+    ]
+    category_type = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='COURSE')
+```
+---
+
