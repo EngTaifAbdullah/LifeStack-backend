@@ -163,7 +163,6 @@ The API will now be available at : `http://127.0.0.1:8000/api/`
 
 ```bash
 class Certificate(models.Model):
-
     title = models.CharField(max_length=200)
     organization = models.CharField(max_length=200)
     date_obtained = models.DateField()
@@ -174,9 +173,18 @@ class Certificate(models.Model):
 #### Personal Document Model
 ```bash
 class PersonalDocument(models.Model):
-
     title = models.CharField(max_length=200)
     file = models.FileField(upload_to='personal_docs/')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_docs')
 
+```
+
+#### Course Model (Goals)
+```bash
+class Course(models.Model):
+    title = models.CharField(max_length=200)
+    provider = models.CharField(max_length=200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='courses')
 ```
