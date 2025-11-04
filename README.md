@@ -104,4 +104,18 @@ pip install
 ```
 
 #### 4. Setup the PostgreSQL database
-Create a PostgreSQL database manually, or use .env file as shown below.
+Create a PostgreSQL database manually, or use `.env` file as shown below.
+
+#### 5. Environment Variables (`.env`)
+
+```bash
+SECRET_KEY=your_secret_key
+DEBUG=True
+ALLOWED_HOSTS= [127.0.0.1, localhost]
+
+DB_NAME=LifeStack
+DB_USER=postgres
+DB_PASSWORD=*****
+DB_HOST=localhost
+DB_PORT=5432
+```
