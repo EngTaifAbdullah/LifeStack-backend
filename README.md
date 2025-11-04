@@ -154,3 +154,29 @@ The API will now be available at : `http://127.0.0.1:8000/api/`
 | `/api/personal/{id}/`     | GET / PUT / DELETE | Retrieve, update, or delete a personal document |
 | `/api/courses/`           | GET / POST         | List or create goals/courses                    |
 | `/api/courses/{id}/`      | GET / PUT / DELETE | Retrieve, update, or delete a course            |
+
+
+---
+### 🧠 Models Overview
+
+#### Certificate Model
+
+```bash
+class Certificate(models.Model):
+
+    title = models.CharField(max_length=200)
+    organization = models.CharField(max_length=200)
+    date_obtained = models.DateField()
+    file = models.FileField(upload_to='certificate/')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='certificate')
+```
+
+#### Personal Document Model
+```bash
+class PersonalDocument(models.Model):
+
+    title = models.CharField(max_length=200)
+    file = models.FileField(upload_to='personal_docs/')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='personal_docs')
+
+```
