@@ -201,5 +201,20 @@ class Category(models.Model):
     ]
     category_type = models.CharField(max_length=10, choices=CATEGORY_CHOICES, default='COURSE')
 ```
----
 
+---
+## 🔐 Authentication
+This project uses JWT (JSON Web Token) authentication with SimpleJWT library.
+Users can register, obtain tokens, and authenticate their API requests by including:
+```bash
+Authorization: Bearer <access_token>
+```
+
+### CORS Configuration
+CORS is enabled in settings.py to allow the frontend React app to communicate with the backend:
+```bash
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+
+```
