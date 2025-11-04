@@ -258,7 +258,15 @@ docker run -p 8000:8000 lifestack-backend
 
 ---
 ### 🔮 Future Improvements
-- Add password reset functionality
+ 1. Add User Profile Customization
+ 2. Add Notifications & Reminders
+ 3. Add Progress Tracking to view completed and in-progress goals
+ 4. Add File Sharing Feature
+ 5. Add Security Features in Personal Documents
+ 6. Integrate Cloud Backup Services
+ 7. Add Mobile App Version
+ 8. Add Multi-language Support
+ 9- Add password reset functionality
 
 ---
 ### 👩‍💻 Developer
