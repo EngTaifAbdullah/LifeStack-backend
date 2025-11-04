@@ -1,6 +1,6 @@
 # 📚 LifeStack Web Application - Backend
 ---
-## Overview
+### Overview
 
 This is the backend of the LifeStack full stack web application.
 It provides a Django REST API that handles user authentication, data storage, and CRUD operations for certificates, personal documents, and future Goals (courses).
@@ -9,7 +9,7 @@ The backend is designed to work seamlessly with the **React (Vite)** frontend.
 
 ---
 
-## 💡 Platform Idea
+### 💡 Platform Idea
 
 LifeStack is a digital personal platform that allows users to:
 
@@ -21,7 +21,7 @@ Access all their data anytime, anywhere, through a secure and authenticated syst
 
 ---
 
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
 - Django 5.0+
 - Django REST Framework (DRF)
@@ -31,3 +31,51 @@ Access all their data anytime, anywhere, through a secure and authenticated syst
 - Docker
 - Gunicorn (for production)
 - Pillow (for image/file uploads)
+
+  ---
+
+  
+### 🛠️ Project Structure (Backend)
+
+ ```
+LifeStack-backend/
+│
+├── LifeStack/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── certificates/
+│   ├── migrations/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+│
+├── courses/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+│
+├── personal/
+│   ├── migrations/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+│
+├── users/
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+│
+└── manage.py
+ ```
+ 
