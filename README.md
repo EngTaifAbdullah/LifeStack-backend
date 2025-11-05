@@ -294,6 +294,7 @@ docker run -p 8000:8000 lifestack-backend
  6. Integrate Cloud Backup Services
  7. Add Mobile App Version
  8. Add Multi-language Support
+---
 
 ### 👩‍💻 Developer
 
