@@ -25,7 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-)dzlcl#bko47y-dl-f644+*q%(5&hiqyza)!xi4ta_#c%2(g_j'
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 
@@ -100,16 +99,7 @@ WSGI_APPLICATION = 'LifeStack.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'LifeStack',  # Name of your PostgreSQL database
-#         'USER': 'postgres',
-#         'PASSWORD': 'TA123456at',
-#         'HOST': 'localhost',  
-#         'PORT': '5432',
-#     }
-# }
+
 
 
 DATABASES = {
