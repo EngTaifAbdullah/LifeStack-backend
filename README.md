@@ -12,11 +12,8 @@ The backend is designed to work seamlessly with the **React (Vite)** frontend.
 ### 💡 Platform Idea
 
 LifeStack is a digital personal platform that allows users to:
-
 Organize and store their certificates, achievements, and personal documents.
-
 Set and track future learning goals or courses.
-
 Access all their data anytime, anywhere, through a secure and authenticated system.
 
 ---
